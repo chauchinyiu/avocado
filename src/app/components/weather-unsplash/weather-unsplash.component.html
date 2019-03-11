@@ -1,19 +1,38 @@
-<div class="row">
-  <div class="col-sm-12 col-md-4">
-    Aktuelle Temperatur: {{weatherData?.temp}}
-  </div>
-  <div class="col-sm-12 col-md-4">
-    Min.: {{weatherData?.temp_min}}
-  </div>
-  <div class="col-sm-12 col-md-4">
-    Max.: {{weatherData?.temp_max}}
-  </div>
-   
-    <img *ngIf="currentImage" [src]="currentImage.url" width="100%" />
+<ngb-carousel *ngIf="images">
+  <ng-template ngbSlide>
+    <img [src]="currentImage.url"  alt="Random first slide">
+    <div class="carousel-caption">
+      <h5>Munich 3,{{weatherData?.temp}}, {{weatherData?.weatherLongDescription}}</h5>
+      <p>{{currentImage.title}}</p>
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <img [src]="currentImage.url" alt="Random second slide">
+    <div class="carousel-caption">
+      <h5>Munich 3,{{weatherData?.temp}}, {{weatherData?.weatherLongDescription}}</h5>
+      <p>{{currentImage.title}}</p>
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <img [src]="currentImage.url"  alt="Random third slide">
+    <div class="carousel-caption">
+      <h5>Munich 3,{{weatherData?.temp}}, {{weatherData?.weatherLongDescription}}</h5>
+      <p>{{currentImage.title}}</p>
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <img [src]="currentImage.url"  alt="Random fourth slide">
+    <div class="carousel-caption">
+      <h5>Munich 3,{{weatherData?.temp}}, {{weatherData?.weatherLongDescription}}</h5>
+      <p>{{currentImage.title}}</p>
+    </div>
+  </ng-template>
+</ngb-carousel>
+
   
-</div>
-<div class="row justify-content-end">
+
+<!-- <div class="row justify-content-end">
   <div class="col col-md-2 col-sm-12 float-right">
-    <button class="btn btn-primary" (click)="fetchWeatherUnsplash()">hole Wetter-Daten</button>
+    <button class="btn btn-primary" (click)="fetchWeatherUnsplash()">Get New Pictures!</button>
   </div>
-</div>
+</div> -->

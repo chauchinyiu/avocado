@@ -16,11 +16,17 @@ export class WeatherUnsplashService {
 
   constructor(private httpClient: HttpClient) { }
 
-  weatherUnsplashApiUrl(city,size){
-     return 'http://weather-unsplash.herokuapp.com/weather/'+city+'/photo/'+size;
-  }
-  fetchWeatherUnsplash(city,size):Observable<WeatherData> {
-    return this.httpClient.get(this.weatherUnsplashApiUrl(city,size))
+   url:string = 'http://weather-unsplash.herokuapp.com';
+  
+  fetchWeatherUnsplash(city,size,orientation,num_imgs):Observable<WeatherData> {
+    const params = {
+      'city': city,
+      'size': size,
+      'orientation': orientation,
+      'num_imgs': num_imgs   
+    }
+
+    return this.httpClient.get(this.url,{'params':params})
       .pipe(
         tap(data => console.dir(data)),
         map(data => <WeatherData>data)
