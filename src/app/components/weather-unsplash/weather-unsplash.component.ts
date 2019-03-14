@@ -9,30 +9,37 @@ import { NgbCarouselConfig} from '@ng-bootstrap/ng-bootstrap';
   providers: [NgbCarouselConfig] 
 })
 export class WeatherUnsplashComponent implements OnInit {
+ 
   weatherData:WeatherData;
   images:Array<ImageData>;
-  currentImage:ImageData;
-  constructor(private weatherUnsplashService: WeatherUnsplashService) {
+  error:string;
+  city:string ='munich';
+  
 
-   }
+  constructor(private weatherUnsplashService: WeatherUnsplashService) {
+  }
   
   ngOnInit() {
     this.fetchWeatherUnsplash();
   }
+
   fetchWeatherUnsplash() {
-    this.weatherUnsplashService.fetchWeatherUnsplash('munich','regular','landscape',200).subscribe(
+    this.weatherUnsplashService.fetchWeatherUnsplash(this.city,'regular','landscape',5).subscribe(
       value =>{
-      this.weatherData = value;
-      this.images = value.images;
-      this.currentImage = this.images[this.generateRandomInteger(0,this.images.length - 1)];
-      console.log(this.weatherData);
-      console.log(this.images);
-       },
+       this.weatherData = value;
+       this.images = value.images;
+      },
     error => {console.log(error);}
     )
   }
 
-   generateRandomInteger(min, max) {
-    return Math.floor(min + Math.random()*(max + 1 - min))
+  generateRandomInteger(min, max) {
+      return Math.floor(min + Math.random()*(max + 1 - min))
+  }
+
+  onCityKey(event: string) {
+    this.city = event;
+   
   }
 }
+ 

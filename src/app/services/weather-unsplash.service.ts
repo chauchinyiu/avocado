@@ -12,7 +12,6 @@ import { WeatherData, ImageData} from '../models/WeatherUnsplashData';
 })
 export class WeatherUnsplashService {
 
-  //private weatherUnsplashApiUrl = 'http://weather-unsplash.herokuapp.com/weather/munich/photo/regular';
 
   constructor(private httpClient: HttpClient) { }
 
