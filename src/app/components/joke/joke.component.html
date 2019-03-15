@@ -1,0 +1,17 @@
+ <div class="container"> 
+   <div class="jumbotron">
+      <h1 class="display-3">{{joke | quote}}</h1>
+ 
+      <p class="lead">
+          <form (ngSubmit)="onEnter()" role="form" >
+              <div>
+                <input #nameInput placeholder="your friend's name" type="text" class="form-control" (keyup)="onNameKey(nameInput.value)" (keyup.enter)="onEnter()"/>
+              </div>
+               
+              <div>
+                <button (click)="getJoke()" class="btn btn-primary btn-lg btn-block">{{buttonTitle}}</button>
+              </div>
+          </form>
+      
+  </div> 
+</div>
