@@ -34,25 +34,23 @@ export class JokeComponent implements OnInit {
   value:string;
 
   onNameKey(event: string) {
+    this.textEntered.emit(this.name);
+    this.onButtonTitleChange()
     if(event.length > 0) {
       this.lastName = "";
+      this.name = event;
     }else{
       this.name = "Chuck";
       this.lastName = "Norris";
     }
-    this.name = event;
-    this.textEntered.emit(this.name);
-    this.onButtonTitleChange()
+    
+    
   }
 
   onButtonTitleChange(){
-    if (this.name.length == 0) {
-      this.buttonTitle = "What would Chuck Norris do?";
-   
-    }else{
-      this.buttonTitle = "what would " + this.name + " do?";
-    }
+       this.buttonTitle = "what would " + this.name +" "+ this.lastName +" do?";  
   }
+
   onEnter() {
     this.getJoke()
     this.submitted.emit();

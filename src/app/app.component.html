@@ -1,20 +1,41 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+<!-- <nav class="navbar navbar-expand navbar-dark px-4 flex-column bg-dark flex-md-row bg-dar">
   <a class="navbar-brand" href="#">Avocado</a>
-  <!-- <a class="nav-item navbar-link mr-1" routerLink="/" routerLinkActive="active">Home</a>
-  <a class="nav-item navbar-link mr-1" routerLink="/chucknorris" routerLinkActive="active">Chuck Norris</a>
-  <a class="nav-item navbar-link mr-1" routerLink="/yourfriend" routerLinkActive="active">Your Friend</a>
-  <a class="nav-item navbar-link" routerLink="/weather" routerLinkActive="active">Weather</a> -->
+  <a class="nav-item navbar-link mr-1" routerLink="/weather" routerLinkActive="active">Weather</a>
+  <a class="nav-item navbar-link mr-1" routerLink="/joke" routerLinkActive="active">Jokes</a>
+
+</nav> -->
+<!--Navbar -->
+<nav class="navbar navbar-dark navbar-expand-lg bg-dark">
+  <a class="navbar-brand" href="#">Avocado</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4"
+    aria-controls="navbarSupportedContent-4" aria-expanded="true" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/weather" routerLinkActive="active">
+         Weather
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/joke" routerLinkActive="active">
+        Jokes </a>
+      </li>
+    </ul>
+  </div>
 </nav>
+<!--/.Navbar -->
  
-<main role="main" class="container">
+  <main role="main" class="container">
   <div class="row justify-content-center">
     <div class="col-10">
-      <!-- <app-weather-unsplash></app-weather-unsplash> -->
-      <app-joke></app-joke>
+      
+      <router-outlet></router-outlet>
     </div>
   </div>
 </main>
- 
+  
 
 
  
