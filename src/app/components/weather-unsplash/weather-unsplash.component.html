@@ -39,7 +39,7 @@
 
 
 <form (ngSubmit)="fetchWeatherUnsplash()" role="form">
-  <div>
+  <div class="pt-5 pdb-5"> 
     <input #cityInput placeholder="Input a City" type="text" class="form-control" (keyup)="onCityKey(cityInput.value)" (keyup.enter)="fetchWeatherUnsplash()"/>
   </div>
   <div class="col-sm-12 col-md-6" *ngIf="error">
@@ -47,7 +47,7 @@
       {{error}}
     </div>
   </div>
-  <div>
+  <div class="pt-5 pb-5">
     <button (click)="fetchWeatherUnsplash()" class="btn btn-primary btn-lg btn-block">City</button>
   </div>
 </form>

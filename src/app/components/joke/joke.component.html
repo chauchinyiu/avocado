@@ -1,13 +1,19 @@
- <div class="container"> 
-   <div class="jumbotron">
+ 
+<div class="container bgImgCenter"   > 
+   
+   <div class="jumbotron bg-j">
       <h1 class="display-3">{{joke | quote}}</h1>
  
       <p class="lead">
           <form (ngSubmit)="onEnter()" role="form" >
-              <div>
-                <input #nameInput placeholder="your friend's name" type="text" class="form-control" (keyup)="onNameKey(nameInput.value)" (keyup.enter)="onEnter()"/>
+           
+              <div class="input-group input-group-lg pt-3 pb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroup-sizing-lg">Name:</span>
+                </div>
+                <input #nameInput placeholder="your friend's name" type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" (keyup)="onNameKey(nameInput.value)" (keyup.enter)="onEnter()"/>
               </div>
-               
+              
               <div>
                 <button (click)="getJoke()" class="btn btn-primary btn-lg btn-block">{{buttonTitle}}</button>
               </div>
