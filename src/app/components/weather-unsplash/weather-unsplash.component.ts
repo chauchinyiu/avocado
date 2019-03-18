@@ -27,6 +27,7 @@ export class WeatherUnsplashComponent implements OnInit {
     this.weatherUnsplashService.fetchWeatherUnsplash(this.city,'regular','landscape',5).subscribe(
       value =>{
        this.weatherData = value;
+       console.dir('weather :: ',this.weatherData);
        this.images = value.images;
       },
     error => {console.log(error);}

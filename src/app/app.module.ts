@@ -9,13 +9,15 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { JokeComponent } from './components/joke/joke.component';
 import { QuotePipe } from './pipes/quote.pipe';
+import { DegreeCelsiusPipe } from './pipes/degree-celsius.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     WeatherUnsplashComponent,
     JokeComponent,
-    QuotePipe
+    QuotePipe,
+    DegreeCelsiusPipe
   ],
   imports: [
     BrowserModule,

@@ -1,42 +1,31 @@
 
 <ngb-carousel *ngIf="images" >
-  <ng-template ngbSlide>
-    <img class="mx-auto" [src]="images[0].url">
+  <ng-template ngbSlide *ngFor="let image of images">
+    <img class="mx-auto" [src]="image.url">
+    
     <div class="carousel-caption">
-      <h5>{{city}}, {{weatherData?.temp}}, {{weatherData?.weatherLongDescription}}</h5>
-      <p>{{images[0].title}}</p>
-    </div>
-  </ng-template>
-  <ng-template ngbSlide>
-    <img class="mx-auto" [src]="images[1].url">
-    <div class="carousel-caption">
-      <h5>{{city}}, {{weatherData?.temp}}, {{weatherData?.weatherLongDescription}}</h5>
-      <p>{{images[1].title}}</p>
-    </div>
-  </ng-template>
-  <ng-template ngbSlide>
-    <img class="mx-auto" [src]="images[2].url">
-    <div class="carousel-caption">
-      <h5>{{city}}, {{weatherData?.temp}}, {{weatherData?.weatherLongDescription}}</h5>
-      <p>{{images[2].title}}</p>
-    </div>
-  </ng-template>
-  <ng-template ngbSlide>
-    <img class="mx-auto" [src]="images[3].url">
-    <div class="carousel-caption">
-      <h5>{{city}},{{weatherData?.temp}}, {{weatherData?.weatherLongDescription}}</h5>
-      <p>{{images[3].title}}</p>
-    </div>
-  </ng-template>
-  <ng-template ngbSlide>
-    <img class="mx-auto" [src]="images[4].url">
-    <div class="carousel-caption">
-      <h5>{{city}},{{weatherData?.temp}}, {{weatherData?.weatherLongDescription}}</h5>
-      <p>{{images[4].title}}</p>
-    </div>
+      
+         
+      <!-- <h2>{{image.title}}</h2> -->
+      <!-- <div class="container">
+          <div class="row">
+            <div class="col-auto"><img [src]="weatherData?.iconurl"/></div>
+            <div class="col-auto"><h3>{{city}}, {{weatherData?.temp | degreeCelsius}}, {{weatherData?.weatherLongDescription}}</h3></div>
+            <div class="col-auto align-self-start"><h3>{{image.title}}</h3></div>
+          </div>
+        </div>
+    </div> -->
+
+    <div class="media">
+        <img class="mr-3" [src]="weatherData?.iconurl">
+        <div class="media-body">
+          <h5 class="mt-0">{{city}}, {{weatherData?.temp | degreeCelsius}}, {{weatherData?.weatherLongDescription}}</h5>
+          {{image.title}}
+        </div>
+      </div>
+    </div> 
   </ng-template>
 </ngb-carousel>
-
 
 <form (ngSubmit)="fetchWeatherUnsplash()" role="form">
   <div class="pt-5 pdb-5"> 

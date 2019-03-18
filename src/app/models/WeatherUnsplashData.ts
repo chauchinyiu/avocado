@@ -4,6 +4,7 @@ export interface WeatherData {
   temp_max: number;
   humidity:number;
   pressure:number;
+  iconurl:string;
   weatherShortDescription: string;
   weatherLongDescription: string;
   images:[];
