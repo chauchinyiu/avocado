@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs';
 import {map, tap} from 'rxjs/operators';
 import { WeatherData, ImageData} from '../models/WeatherUnsplashData';
+import { Variable } from '@angular/compiler/src/render3/r3_ast';
 
 @Injectable({
   providedIn: 'root'
@@ -18,12 +19,13 @@ export class WeatherUnsplashService {
    url:string = 'http://weather-unsplash.herokuapp.com';
   
   fetchWeatherUnsplash(city,size,orientation,num_imgs):Observable<WeatherData> {
-    const params = {
+    var params = {
       'city': city,
       'size': size,
       'orientation': orientation,
       'num_imgs': num_imgs   
-    }
+    };
+   
 
     return this.httpClient.get(this.url,{'params':params})
       .pipe(

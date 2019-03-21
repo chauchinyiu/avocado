@@ -10,6 +10,8 @@ import { FormsModule } from '@angular/forms';
 import { JokeComponent } from './components/joke/joke.component';
 import { QuotePipe } from './pipes/quote.pipe';
 import { DegreeCelsiusPipe } from './pipes/degree-celsius.pipe';
+import {CrystalLightboxModule} from '@crystalui/angular-lightbox';
+import { NgMasonryGridModule } from 'ng-masonry-grid';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { DegreeCelsiusPipe } from './pipes/degree-celsius.pipe';
     AppRoutingModule,
     HttpClientModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    CrystalLightboxModule,
+    NgMasonryGridModule
   ],
   providers: [],
   bootstrap: [AppComponent]

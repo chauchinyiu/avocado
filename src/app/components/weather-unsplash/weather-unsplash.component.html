@@ -22,48 +22,44 @@
 
   <p class="page-description text-center">Fluid Layout With Overlay Effect</p>
   
-  <div class="tz-gallery">
+  <div lightbox-group>
+      
+        <ng-masonry-grid
+            [masonryOptions]="{ transitionDuration: '0.8s', gutter: 5 }" 
+            [useAnimation]="true"
+            [useImagesLoaded]="true"
+            [scrollAnimationOptions]="{ animationEffect: 'effect-4', minDuration : 0.4, maxDuration : 0.7 }">
+            <!-- Masonry Grid Item -->
+            <ng-masonry-grid-item id="{{'masonry-item-'+i}}" *ngFor="let image of images; let i = index;" > 
+        <!-- Grid Content  -->
+              <img [src]="image.url"alt="No image"  width="200px"  backgroundOpacity="0.8" [hideThumbnail]="false" lightbox/>
+            </ng-masonry-grid-item>
+           </ng-masonry-grid>
 
-      <div class="row">
 
-          <div class="col-sm-12 col-md-4">
-              <a class="lightbox" [href]="images[0].url">
-                  <img [src]="images[0].url" [alt]="images[0].title">
-              </a>
-          </div>
-          <div class="col-sm-6 col-md-4">
-            <a class="lightbox" [href]="images[1].url">
-              <img [src]="images[1].url" [alt]="images[1].title">
-           </a>
-          </div>
-          <div class="col-sm-6 col-md-4">
-            <a class="lightbox" [href]="images[2].url">
-              <img [src]="images[2].url" [alt]="images[2].title">
-          </a>
-          </div>
-          <div class="col-sm-12 col-md-8">
-            <a class="lightbox" [href]="images[3].url">
-              <img [src]="images[3].url" [alt]="images[3].title">
-          </a>
-          </div>
-          <div class="col-sm-6 col-md-4">
-            <a class="lightbox" [href]="images[4].url">
-              <img [src]="images[4].url" [alt]="images[4].title">
-          </a>
-          </div> 
-          <div class="col-sm-6 col-md-4">
-            <a class="lightbox" [href]="images[5].url">
-              <img [src]="images[5].url" [alt]="images[5].title">
-          </a>
-          </div>
-
+            <!-- <img [src]="images[0].url" backgroundOpacity="0.8" width="200px"
+            [hideThumbnail]="false" lightbox/>
+          
+            <img [src]="images[1].url" backgroundOpacity="0.8" width="200px"
+             [hideThumbnail]="false" lightbox/>
+            
+          <img [src]="images[2].url" backgroundOpacity="0.8" width="200px"
+          [hideThumbnail]="false" lightbox/>
+        
+          <img [src]="images[3].url" backgroundOpacity="0.8" width="200px"
+          [hideThumbnail]="false" lightbox />
+         
+ 
+          <img [src]="images[4].url" backgroundOpacity="0.8" width="200px"
+          [hideThumbnail]="false" lightbox />
+          
+          
+          <img [src]="images[5].url" backgroundOpacity="0.8" width="200px" 
+          [hideThumbnail]="false" lightbox/> -->
+           
+        </div>
       </div>
-
-  </div>
-
-</div>
-
-<form (ngSubmit)="fetchWeatherUnsplash()" role="form">
+<!-- <form (ngSubmit)="fetchWeatherUnsplash()" role="form">
   <div class="pt-5 pdb-5"> 
     <input #cityInput placeholder="Input a City" type="text" class="form-control" (keyup)="onCityKey(cityInput.value)" (keyup.enter)="fetchWeatherUnsplash()"/>
   </div>
@@ -75,4 +71,4 @@
   <div class="pt-5 pb-5">
     <button (click)="fetchWeatherUnsplash()" class="btn btn-primary btn-lg btn-block">City</button>
   </div>
-</form>
+</form> -->
