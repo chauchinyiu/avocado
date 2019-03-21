@@ -18,11 +18,11 @@ export class WeatherUnsplashService {
 
    url:string = 'http://weather-unsplash.herokuapp.com';
   
-  fetchWeatherUnsplash(city,size,orientation,num_imgs):Observable<WeatherData> {
+  fetchWeatherUnsplash(city,size,num_imgs):Observable<WeatherData> {
     var params = {
       'city': city,
       'size': size,
-      'orientation': orientation,
+    
       'num_imgs': num_imgs   
     };
    

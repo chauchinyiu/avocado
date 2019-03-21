@@ -18,9 +18,9 @@
 
 <div class="container gallery-container">
 
-  <h1>Bootstrap 3 Gallery</h1>
+  <h1>{{city}}'s Gallery</h1>
 
-  <p class="page-description text-center">Fluid Layout With Overlay Effect</p>
+  <p class="page-description text-center">s</p>
   
   <div lightbox-group>
       
@@ -31,7 +31,7 @@
             [scrollAnimationOptions]="{ animationEffect: 'effect-4', minDuration : 0.4, maxDuration : 0.7 }">
             <!-- Masonry Grid Item -->
             <ng-masonry-grid-item id="{{'masonry-item-'+i}}" *ngFor="let image of images; let i = index;" > 
-        <!-- Grid Content  -->
+            <!-- Grid Content  -->
               <img [src]="image.url"alt="No image"  width="200px"  backgroundOpacity="0.8" [hideThumbnail]="false" lightbox/>
             </ng-masonry-grid-item>
            </ng-masonry-grid>
