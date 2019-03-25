@@ -2,7 +2,16 @@
 
   <h1>{{city}}'s Gallery</h1>
 
-  <p class="page-description text-center">s</p>
+  <div class="row">
+     <div class="col-sm-12 col-md-4">
+          <img [src]="weatherData.iconurl" alt="icon" width="50px" />
+     </div>
+    
+    <div class="col-sm-12 col-md-4">
+      {{weatherData.weatherLongDescription}}, Temperature: {{weatherData.temp | degreeCelsius}}, Humidity : {{weatherData.humidity}}%
+    </div>
+   
+  </div>
   
   <div lightbox-group>
         <ng-masonry-grid
