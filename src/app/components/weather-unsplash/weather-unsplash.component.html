@@ -1,21 +1,3 @@
-<!-- 
-<ngb-carousel *ngIf="images" >
-  <ng-template ngbSlide *ngFor="let image of images">
-    <img class="mx-auto" [src]="image.url">
-    
-    <div class="carousel-caption">
-      
-    <div class="media">
-        <img class="mr-3" [src]="weatherData?.iconurl">
-        <div class="media-body">
-          <h5 class="mt-0">{{city}}, {{weatherData?.temp | degreeCelsius}}, {{weatherData?.weatherLongDescription}}</h5>
-          {{image.title}}
-        </div>
-      </div>
-    </div> 
-  </ng-template>
-</ngb-carousel> -->
-
 <div class="container gallery-container">
 
   <h1>{{city}}'s Gallery</h1>
@@ -23,42 +5,22 @@
   <p class="page-description text-center">s</p>
   
   <div lightbox-group>
-      
         <ng-masonry-grid
+            (onNgMasonryInit)="onNgMasonryInit($event)"
+             (layoutComplete)="layoutComplete($event)" 
+             (removeComplete)="removeGridItem($event)"
             [masonryOptions]="{ transitionDuration: '0.8s', gutter: 5 }" 
             [useAnimation]="true"
             [useImagesLoaded]="true"
             [scrollAnimationOptions]="{ animationEffect: 'effect-4', minDuration : 0.4, maxDuration : 0.7 }">
             <!-- Masonry Grid Item -->
-            <ng-masonry-grid-item id="{{'masonry-item-'+i}}" *ngFor="let image of images; let i = index;" > 
+            <ng-masonry-grid-item  id="{{'masonry-item-'+i}}" *ngFor="let item of masonryItems; let i = index;" > 
             <!-- Grid Content  -->
-              <img [src]="image.url"alt="No image"  width="200px"  backgroundOpacity="0.8" [hideThumbnail]="false" lightbox/>
+              <img [src]="item.src" alt="No image" width="200px"  backgroundOpacity="0.8" [hideThumbnail]="false" lightbox/>
             </ng-masonry-grid-item>
            </ng-masonry-grid>
-
-
-            <!-- <img [src]="images[0].url" backgroundOpacity="0.8" width="200px"
-            [hideThumbnail]="false" lightbox/>
-          
-            <img [src]="images[1].url" backgroundOpacity="0.8" width="200px"
-             [hideThumbnail]="false" lightbox/>
-            
-          <img [src]="images[2].url" backgroundOpacity="0.8" width="200px"
-          [hideThumbnail]="false" lightbox/>
-        
-          <img [src]="images[3].url" backgroundOpacity="0.8" width="200px"
-          [hideThumbnail]="false" lightbox />
-         
- 
-          <img [src]="images[4].url" backgroundOpacity="0.8" width="200px"
-          [hideThumbnail]="false" lightbox />
-          
-          
-          <img [src]="images[5].url" backgroundOpacity="0.8" width="200px" 
-          [hideThumbnail]="false" lightbox/> -->
-           
         </div>
-      </div>
+</div>
 <!-- <form (ngSubmit)="fetchWeatherUnsplash()" role="form">
   <div class="pt-5 pdb-5"> 
     <input #cityInput placeholder="Input a City" type="text" class="form-control" (keyup)="onCityKey(cityInput.value)" (keyup.enter)="fetchWeatherUnsplash()"/>

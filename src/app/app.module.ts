@@ -12,6 +12,7 @@ import { QuotePipe } from './pipes/quote.pipe';
 import { DegreeCelsiusPipe } from './pipes/degree-celsius.pipe';
 import {CrystalLightboxModule} from '@crystalui/angular-lightbox';
 import { NgMasonryGridModule } from 'ng-masonry-grid';
+import { NavbarInputComponent } from './components/navbar-input/navbar-input.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { NgMasonryGridModule } from 'ng-masonry-grid';
     WeatherUnsplashComponent,
     JokeComponent,
     QuotePipe,
-    DegreeCelsiusPipe
+    DegreeCelsiusPipe,
+    NavbarInputComponent
   ],
   imports: [
     BrowserModule,

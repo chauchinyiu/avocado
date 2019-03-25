@@ -8,9 +8,7 @@ import { Variable } from '@angular/compiler/src/render3/r3_ast';
 @Injectable({
   providedIn: 'root'
 })
-@Injectable({
-  providedIn: 'root'
-})
+ 
 export class WeatherUnsplashService {
 
 
