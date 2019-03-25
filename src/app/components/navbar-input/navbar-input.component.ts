@@ -1,5 +1,5 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
-import { NavbarInputService } from 'src/app/services/navbar-input.service';
+import { NavbarInputService } from '../../services/navbar-input.service';
 
 @Component({
   selector: 'app-navbar-input',

@@ -7,8 +7,6 @@
   <div lightbox-group>
         <ng-masonry-grid
             (onNgMasonryInit)="onNgMasonryInit($event)"
-             (layoutComplete)="layoutComplete($event)" 
-             (removeComplete)="removeGridItem($event)"
             [masonryOptions]="{ transitionDuration: '0.8s', gutter: 5 }" 
             [useAnimation]="true"
             [useImagesLoaded]="true"
